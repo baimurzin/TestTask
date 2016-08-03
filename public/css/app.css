@@ -1,0 +1,20 @@
+.arrow_top {
+    float: left;
+    width: 100%;
+    margin-bottom: 2px;
+    font-size: 1.3em;
+}
+
+.arrow_bot {
+    font-size: 1.3em;
+}
+
+.name_comments {
+    margin-right: 5px;
+}
+
+
+.voted {
+    color: red;
+    font-size: 1.35em;
+}
