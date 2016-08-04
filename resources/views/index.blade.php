@@ -1,6 +1,11 @@
 @extends('app')
 
-
+<div class="row">
+    <div class="col-md-offset-5 ">
+        <h4><a href="/posts/new">Создать пост</a></h4>
+    </div>
+</div>
+<hr>
 @foreach($posts as $post)
     <div class="row">
         <div class="col-md-8">
@@ -34,5 +39,5 @@
         </div>
 
     </div>
-
+    <hr>
 @endforeach

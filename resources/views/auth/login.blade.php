@@ -5,7 +5,6 @@
         <div class="row">
 
             <div class="col-md-4 col-md-offset-4" style="margin-top: 200px;">
-                <img style="position:relatative;top:0;padding-right: 14px;top -83px;bottom: 265px;" src="/asa11a/logo.png">
                 <div class="panel panel-default">
 
                     <div class="panel-body">
@@ -39,20 +38,11 @@
                                 </div>
                             </div>
 
-                            <!----	<div class="form-group">
-                                    <div class="col-md-6 col-md-offset-4">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" name="remember"> Запомнить меня
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-        --->
                             <div class="form-group">
                                 <div class="col-xs-12">
 
                                     <a class="btn btn-link" style="padding-left: 0px;" href="{{ url('/password/email') }}">Забыли пароль?</a>
+                                    <a class="btn btn-link" style="padding-left: 0px;" href="{{ url('/auth/register') }}">Нет аккаунта?</a>
 
                                     <button style="position:absolute;right:0;margin-right: 15px;padding-top: 3px;padding-bottom: 1px;padding-left: 3px;padding-right: 3px; border-radius:0px;" type="submit" class="btn btn-primary">ВОЙТИ</button>
                                 </div>

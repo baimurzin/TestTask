@@ -11,7 +11,7 @@
     <hr>
     {{--date--}}
     <p><span class="glyphicon glyphicon-time"></span> {{$post->created_at}}</p>
-    
+
     <hr>
 
     {{--content--}}
