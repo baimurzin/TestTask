@@ -34,4 +34,23 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/posts/{postId}/comments/{commentId}/down', ['uses' => 'PostController@downVoteComment']);
 });
 
+Route::group(['prefix' => 'telegram'], function() {
+
+    Route::group(['prefix' => '268503234:AAFeyiEA04MRoGBIL-eEI8FVNGMdcZJTr7U'], function() {
+        Route::post('/', function() {
+            $input_data = json_decode(file_get_contents('php://input'), true);
+            if (isset($input_data['message'])) {
+                $Message = $input_data['message'];
+                $User = $Message['from'];
+                if (isset($Message['text'])) $MsgText = $Message['text'];
+            }
+
+            $bot = new \app\Bot('268503234:AAFeyiEA04MRoGBIL-eEI8FVNGMdcZJTr7U');
+            $text = "Добро пожаловать! Если вы хотите сделать город удобным и приятным для жизни, просто и эффективно влиять на качество городской среды, то вы зашли по адресу!" . "\r\n" .
+                "Так как вы у нас в первый раз, перед тем как отправлять обращения, заполните, пожалуйста свои реквизиты, это не займёт много времени.";
+            $bot->executeMethod('sendMessage', http_build_query(array('chat_id' => $User['id'], 'text' => $text, 'parse_mode' => 'HTML')));
+        });
+    });
+
+});
 
