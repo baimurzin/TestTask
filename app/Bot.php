@@ -6,7 +6,7 @@
  * Time: 1:21
  */
 
-namespace app;
+namespace App;
 
 
 class Bot
