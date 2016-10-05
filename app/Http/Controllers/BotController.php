@@ -9,7 +9,7 @@ use App\Http\Requests;
 
 class BotController extends Controller
 {
-    public function handle()
+    public function handle(Request $request)
     {
         $bot = new Bot('268503234:AAFeyiEA04MRoGBIL-eEI8FVNGMdcZJTr7U');
         $input_data = json_decode(file_get_contents('php://input'), true);
@@ -27,6 +27,7 @@ class BotController extends Controller
         }
 
         $text = "Hello";
-        $bot->executeMethod('sendMessage', http_build_query(array('chat_id' => $User['id'], 'text' => $text, 'parse_mode' => 'HTML')));
+        $msg = $request->input('message');
+        $bot->executeMethod('sendMessage', http_build_query(array('chat_id' => $msg['from'], 'text' => $text, 'parse_mode' => 'HTML')));
     }
 }
