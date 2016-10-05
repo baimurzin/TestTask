@@ -39,6 +39,7 @@ Route::group(['prefix' => 'telegram'], function() {
     Route::group(['prefix' => '268503234:AAFeyiEA04MRoGBIL-eEI8FVNGMdcZJTr7U'], function() {
         Route::post('/', function() {
             $input_data = json_decode(file_get_contents('php://input'), true);
+            Storage::put('test', $input_data);
             if (isset($input_data['message'])) {
                 $Message = $input_data['message'];
                 $User = $Message['from'];
