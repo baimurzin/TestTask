@@ -15,7 +15,7 @@ class BotController extends Controller
         $input_data = json_decode(file_get_contents('php://input'), true);
         mb_internal_encoding("UTF-8");
 
-        define('BOT_DEBUG', true);
+        define('BOT_DEBUG', false);
 
         $input_data = json_decode(file_get_contents('php://input'), true);
         if (BOT_DEBUG) file_put_contents(public_path() . '/input_data.txt', var_export($input_data, true));
